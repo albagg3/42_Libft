@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:31:52 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/25 18:25:55 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:29:26 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	char *s1 = "42hola42";
+	char *s1 = "444242hola4442";
 	char *set = "42";
 	char *result;
 

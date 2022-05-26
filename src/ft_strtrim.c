@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 09:32:31 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/25 17:14:18 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:40:27 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	count = 0;
 	s1_len = ft_strlen(s1);
-	while (s1[count] && ft_strchr(set, s1[count] ))
+	while (s1[count] && ft_strchr(set, s1[count]))
 	{
 		//printf("Ha entrado en while 1\n");
 		count++;
