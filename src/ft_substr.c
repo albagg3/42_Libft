@@ -6,19 +6,19 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:49:59 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/25 18:24:10 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:56:44 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *new;
-	size_t	i;
-	unsigned int cont;
-	 cont = 0;
+	char			*new;
+	size_t			i;
+	unsigned int	cont;
 
+	cont = 0;
 	i = ft_strlen(s) - start;
 	if (len >= i && start < ft_strlen(s))
 		len = i;
@@ -31,7 +31,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	while (cont < len)
 	{
-//		ft_strlcpy(new,s,len);
 		new[cont] = s[start];
 		cont++;
 		start++;

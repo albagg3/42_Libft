@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:26:10 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/26 13:18:41 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:17:47 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,15 @@ int	main()
 {
 	char *s = "Hola que tal ";
 	char c;
-
+	char **result;
+	int count;
 	c = ' ';
-	ft_split(s, c);
+	count = 0;
+	result = ft_split(s, c);
+	while(result[count]){
+		printf("|%s|", result[count]);
+		count++;
+	}
+
 	return(0);
 }
