@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:14:30 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/30 13:29:06 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/01 18:27:20 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,20 @@ int	ft_count_words(char	const *s, char c)
 
 void	ft_free(char **result, int n_word)
 {
-
-	while (n_word  > 0)
+	while (n_word > 0)
 	{
 		n_word--;
 		free(result[n_word]);
 	}
 	free(result);
-
 }
 
-char **ft_findposition_cutstring(char	const *s, char c, char **result)
+char	**ft_findposition_cutstring(char	const *s, char c, char **result)
 {
 	int		n_word;
 	int		count;
 	int		start;
-	
+
 	n_word = 0;
 	count = 0;
 	while (s[count])
@@ -67,15 +65,13 @@ char **ft_findposition_cutstring(char	const *s, char c, char **result)
 	return (result);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
 
 	result = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if(!result)
-		return(NULL);
-
+	if (!result)
+		return (NULL);
 	result = ft_findposition_cutstring(s, c, result);
 	return (result);
 }

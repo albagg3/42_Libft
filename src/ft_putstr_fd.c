@@ -6,9 +6,11 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:46:59 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/31 20:55:29 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/01 18:24:40 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -17,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		ft_putchar_fd(s[i],fd)
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }

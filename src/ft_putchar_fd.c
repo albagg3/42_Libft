@@ -6,11 +6,13 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:44:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/31 20:46:26 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/01 11:00:18 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_puchar_fd(char c, int fd)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, c, 1);
+	write(fd, &c, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:03:39 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/19 12:01:40 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:40:25 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = ft_strlen(dst);
 	j = 0;
 	i = dst_len;
-	if (dstsize < dst_len)
+	if (dstsize == 0 || dstsize < dst_len)
 		return (dstsize + src_len);
 	else
 	{
