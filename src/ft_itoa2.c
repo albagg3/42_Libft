@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 15:19:37 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/31 17:10:54 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/30 10:36:25 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/31 12:15:40 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	ft_len(int n)
 {
 	int	len;
 
-	if (n == 0)
-		len = 1;
 	if (n < 0)
 	{
 		len = 1;
@@ -39,29 +37,40 @@ int	ft_len(int n)
 	return (len);
 }
 
+
+
+
 char	*ft_itoa(int n)
 {
 	char	*result;
 	int		len;
-	long	mivalor;
+	int		fixlen;
 
-	mivalor = n;
-	len = ft_len(mivalor);
+	len = ft_len(n);
+	fixlen = len;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+//	printf("len vale:%d\nvalor de n:%d\n", len, n);
 	result = ft_calloc(sizeof(char), len + 1);
-	if (!result)
+	if(!result)
 		return (0);
-	if (mivalor == 0)
-		result[len - 1] = '0';
-	if (mivalor < 0)
+	if (n < 0)
 	{
 		*result = '-';
-		mivalor = -mivalor;
+		n = - n;
+//		printf("valor de n:%d\n", n);
 	}
-	while (mivalor > 0 && len - 1 >= 0)
-	{
-		result[len - 1] = mivalor % 10 + '0';
-		len --;
-		mivalor = mivalor / 10;
-	}
+	while (n >= 0 && count < len)
+		{
+			result[len - 1] = n % 10 + '0';
+			len --;
+			n = n / 10;
+//			printf("lo que hay en result:%c\n", result[len]);
+		}
+//	result[fixlen] = '\0';
+
+
+
 	return (result);
 }
+

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_itoa.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 11:21:10 by albagarc          #+#    #+#             */
-/*   Updated: 2022/05/31 12:25:05 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/31 15:41:24 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/31 16:20:58 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main()
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*result;
-	int		n;
-	
-	n = 2147483647;
-	result = ft_itoa(n);
+	unsigned int	i;
+	int				len;
+	char			*new;
 
-	printf("el string result es:  %s", result);
-
-	return (0);
+	i = 0;
+	len = ft_strlen(s);
+	new = malloc(sizeof(char) * len + 1);
+	if (!new)
+		return (0);
+	while (s[i] != '\0')
+	{
+		new[i] = f(i, s[i]);
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }
