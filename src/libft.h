@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 13:39:55 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/03 13:00:19 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:20:50 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
-
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 
 #endif
