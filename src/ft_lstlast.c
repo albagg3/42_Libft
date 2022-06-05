@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:43 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/05 19:55:20 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/05 22:32:21 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*last;
-
-	last = lst;
-	while (last != NULL)
-	{
-		last  = last -> next;
-	}
-	
-	return (last);
+	if (lst)
+		while (lst -> next)
+		{
+			lst = lst -> next;
+		}
+		
+	return (lst);
 }
 
