@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:21:27 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/05 19:55:31 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:24:00 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
+
 	i = 0;
 	while (lst != NULL)
 	{
 		lst = lst -> next;
 		i++;
 	}
-	return(i);
+	return (i);
 }
