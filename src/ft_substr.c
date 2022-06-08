@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:49:59 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/03 09:52:58 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:47:25 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = i;
 	else if (start >= ft_strlen(s))
 		len = 0;
-//	else if (len > ft_strlen(s))
-//		len = ft_strlen(s);
 	new = malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (0);

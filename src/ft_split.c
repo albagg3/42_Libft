@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:14:30 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/07 18:11:59 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:46:38 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	**ft_findposition_cutstring(char	const *s, char c, char **result)
 		{
 			result[n_word] = ft_substr(s, start, count - start + 1);
 			if (!result[n_word])
-				return(ft_free(result, n_word));
+				return (ft_free(result, n_word));
 			n_word++;
 		}
 		count++;
