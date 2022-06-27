@@ -6,30 +6,40 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:24:47 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/08 12:02:59 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:18:27 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libprintf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr(long n)
 {
-	int	mivalor;
-
-	mivalor = n;
-	if (mivalor == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (mivalor < 0)
+	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
-		mivalor = -mivalor;
-		ft_putnbr_fd(mivalor, fd);
+		ft_putchar('-');
+		ft_putnbr(-n);
 	}
-	else if (mivalor >= 10)
+	else if (n >= 10)
 	{
-		ft_putnbr_fd(mivalor / 10, fd);
-		ft_putnbr_fd(mivalor % 10, fd);
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
 	else
-		ft_putchar_fd(mivalor + '0', fd);
+		ft_putchar(n + '0');
+	return (ft_nbr_len(n));
+}
+
+int	ft_nbr_len(long n)
+{
+	int len;
+
+	len = 0;
+	if (n < 0)
+		len = 1;
+	while (n != 0)
+	{
+		len++;
+		n = n / 10;
+	}
+	return (len);
 }

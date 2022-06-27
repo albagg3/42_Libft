@@ -6,7 +6,7 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 10:13:35 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/16 17:21:42 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:31:15 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,21 @@
 int	 ft_identify_format(va_list arg, char c)
 {
 	if (c == 'c')
-		return (ft_print_character(arg));
+		return (ft_print_character(va_arg(arg, int)));
 	if (c == 's')
-		return(ft_print_string(arg));
+		return (ft_print_string(va_arg(arg, char *)));
+	if (c == 'i' || c == 'd')
+		return (ft_putnbr(va_arg(arg, int)));
+	if (c == 'u')
+		return (ft_putnbr(va_arg(arg, unsigned int)));
+	if (c == 'x')
+		return (ft_hexa_lower(va_arg(arg, int)));
+	if (c == 'X')
+		return (ft_hexa_upper(va_arg(arg, int)));
+	if (c == '%')
+		return (ft_putchar('%'));
 	if (c == 'p')
-		return(ft_print_pointer(arg));
+		return (ft_pointer(va_arg(arg, unsigned long long)));
 	return (0);
 
 }
