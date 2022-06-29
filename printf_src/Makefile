@@ -34,6 +34,8 @@ $(NAME) :	$(OBJ) $(LIBFT)/libft.a
 
 clean:
 		$(RM) -r $(OBJ_DIR) $(DEPS)
+		$(RM) $(LIBFT)/libft.a
+		@make clean -C $(LIBFT)
 
 fclean: clean
 		$(RM) $(NAME)
