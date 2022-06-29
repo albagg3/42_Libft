@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/06/03 12:52:17 by albagarc          #+#    #+#             */
+/*   Updated: 2022/06/06 11:23:23 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
-
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	new -> next = *lst;
+	*lst = new;
 }

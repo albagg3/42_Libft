@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/11 18:13:09 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/12 16:50:59 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
-
-int	ft_print_character(int n)
+int	ft_isprint(int c)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
-
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

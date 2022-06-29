@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/12 15:46:36 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/16 16:19:18 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "../inc/ft_printf.h"
-
-int	ft_print_character(int n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	size_t	i;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i] = c;
+		i++;
+	}
+	return (b);
 }

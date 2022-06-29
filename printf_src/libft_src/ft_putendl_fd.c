@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/31 20:56:12 by albagarc          #+#    #+#             */
+/*   Updated: 2022/06/01 18:21:59 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	int	i;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
+	write(fd, "\n", 1);
 }

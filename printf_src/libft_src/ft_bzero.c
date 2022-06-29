@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/12 16:53:34 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/12 17:43:45 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+void	ft_bzero(void *s, size_t n)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	size_t	i;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	i = 0;
+	while (i < n && n != 0)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
 }

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/20 12:29:26 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/22 09:41:41 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
-{
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+void	*ft_memchr(const void *s, int c, size_t n)
+{	
+	size_t	i;
+	char	*mip;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	mip = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (mip[i] == ((char)c))
+			return (((unsigned char *)s) + i);
+		i++;
+	}
+	return (0);
 }

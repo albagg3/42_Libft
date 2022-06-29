@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/19 12:02:15 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/19 12:58:01 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+int	ft_toupper(int c)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
-
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	if (c >= 'a' && c <= 'z')
+	{
+		c = c - 32;
+		return (c);
+	}
+	else
+		return (c);
 }

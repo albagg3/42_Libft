@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/06/01 11:24:47 by albagarc          #+#    #+#             */
+/*   Updated: 2022/06/08 12:02:59 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	int	mivalor;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	mivalor = n;
+	if (mivalor == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (mivalor < 0)
+	{
+		ft_putchar_fd('-', fd);
+		mivalor = -mivalor;
+		ft_putnbr_fd(mivalor, fd);
+	}
+	else if (mivalor >= 10)
+	{
+		ft_putnbr_fd(mivalor / 10, fd);
+		ft_putnbr_fd(mivalor % 10, fd);
+	}
+	else
+		ft_putchar_fd(mivalor + '0', fd);
 }

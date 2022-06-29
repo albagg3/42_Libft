@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/06/05 19:12:43 by albagarc          #+#    #+#             */
+/*   Updated: 2022/06/07 12:34:38 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
-
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	if (lst != NULL)
+		while (lst -> next != NULL)
+			lst = lst -> next;
+	return (lst);
 }

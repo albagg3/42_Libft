@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/17 16:50:31 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/23 14:57:34 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	size_t	i;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	i = 0;
+	if (dstsize != 0)
+	{
+		while (i < (dstsize - 1) && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}	
+		dst[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

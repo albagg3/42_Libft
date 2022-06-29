@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/16 15:56:42 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/25 13:09:30 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	size_t			i;
+	unsigned char	*s;
+	unsigned char	*d;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	s = (unsigned char *) src;
+	d = (unsigned char *) dst;
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }

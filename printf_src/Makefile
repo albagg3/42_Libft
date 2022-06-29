@@ -1,34 +1,43 @@
 NAME = libftprintf.a
-
 CC = gcc
-
+LIBFT = libft_src
 CFLAGS = -Wall -Wextra -Werror
+INC_DIR = inc
+OBJ_DIR = obj/
+SRC_DIR = src/
+SRC_FILES	=	ft_printf ft_print_c_s_p ft_putfunction ft_putnbr_fd ft_hexa 
 
-SRC = ft_printf.c ft_print_character.c
 
-OBJ = $(SRC:.c=.o)
-
-DEPS = $(addsuffix .d, $(basename $(SRC)))
+SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+DEPS 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_FILES)))
 
 RM = rm -f
 
-LIBFT = /Users/albagarc/Desktop/cursus42/printf_src/libft_src/Makefile
+ 
 
-%.o: %.c
-	$(CC) -I../carpetadeincludes.h -c $(CFLAGS) -MMD $< -o $@
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+		mkdir -p $(OBJ_DIR)
+		$(CC) -I $(INC_DIR) -c $(CFLAGS) -MMD $< -o $@
 
-all: $(MAKE) -C $(LIBFT) $(NAME)
+all: makelibft
+	@$(MAKE) $(NAME)
+
+makelibft:
+		@$(MAKE) -C $(LIBFT)
 
 -include $(DEPS)
-$(NAME) :	$(OBJ) $(DEPS) 
-			ar -rcs $(NAME) $(OBJ)
+$(NAME) :	$(OBJ) $(LIBFT)/libft.a
+		cp	$(LIBFT)/libft.a .
+		mv	libft.a $(NAME)
+		ar -rcs $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJ) $(DEPS)
+		$(RM) -r $(OBJ_DIR) $(DEPS)
 
 fclean: clean
 		$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY : all clean re fclean
+.PHONY : all clean re fclean makelibft

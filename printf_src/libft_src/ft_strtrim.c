@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/25 09:32:31 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/27 15:53:36 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	char	*new;
+	int		count;
+	int		s1_len;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	count = 0;
+	s1_len = ft_strlen(s1);
+	while (s1[count] && ft_strchr(set, s1[count]))
+	{
+		count++;
+	}
+	while (*s1 && ft_strchr(set, s1[s1_len - 1]))
+	{
+		s1_len--;
+	}
+	new = ft_substr(s1, count, (s1_len - count));
+	return (new);
 }

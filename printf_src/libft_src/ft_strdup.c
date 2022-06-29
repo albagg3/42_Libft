@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/23 16:44:46 by albagarc          #+#    #+#             */
+/*   Updated: 2022/06/01 11:37:54 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+char	*ft_strdup(const char *s1)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	int		i;
+	char	*ptr;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	i = ft_strlen(s1) + 1;
+	ptr = malloc (sizeof(char) * i);
+	if (ptr != NULL)
+	{
+		ft_memcpy(ptr, s1, i);
+		return (ptr);
+	}
+	return (0);
 }

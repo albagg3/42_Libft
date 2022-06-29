@@ -6,39 +6,49 @@
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 10:14:02 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/27 18:31:12 by albagarc         ###   ########.fr       */
+/*   Updated: 2022/06/29 09:09:37 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libprintf.h"
+#include "../inc/ft_printf.h"
 
-int	ft_hexa_lower(unsigned long long n)
+int	ft_hexa_lower(unsigned long n)
 {
 	char	*base;
 
 	base = "0123456789abcdef";
 	if (n >= 16)
-		ft_hexa_lower(n / 16);
-	ft_putchar(base[n % 16]);
-	return(ft_hexa_len(n));
+	{
+		if (ft_hexa_lower(n / 16) == -1)
+			return (-1);
+	}
+	if (ft_putchar(base[n % 16]) == -1)
+		return (-1);
+	return (ft_hexa_len(n));
 }
 
-int	ft_hexa_upper(unsigned long long n)
+int	ft_hexa_upper(unsigned long n)
 {
 	char	*base;
 
 	base = "0123456789ABCDEF";
 	if (n >= 16)
-		ft_hexa_lower(n / 16);
-	ft_putchar(base[n % 16]);
-	return(ft_hexa_len(n));
+	{
+		if (ft_hexa_upper(n / 16) == -1)
+			return (-1);
+	}
+	if (ft_putchar(base[n % 16]) == -1)
+		return (-1);
+	return (ft_hexa_len(n));
 }
 
-int	ft_hexa_len(unsigned long long n)
+int	ft_hexa_len(unsigned long n)
 {
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		len = 1;
 	while (n != 0)
 	{
 		len ++;
@@ -47,9 +57,13 @@ int	ft_hexa_len(unsigned long long n)
 	return (len);
 }
 
-int ft_pointer(unsigned long long n)
+int	ft_pointer(unsigned long long n)
 {
-//	if (write(1, "0x", 2) != 2)
-//		return (-1);
-	return (write(1, "0x", 2) + ft_hexa_lower(n));
+	int	len;
+
+	len = write(1, "0x", 2);
+	if (len == -1)
+		return (-1);
+	len += ft_hexa_lower(n);
+	return (len);
 }

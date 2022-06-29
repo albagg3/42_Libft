@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putfunctio.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 20:44:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:13:34 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/25 08:44:23 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/27 15:59:49 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_putchar(char c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (write(1, &c, 1) != 1)
-		return (-1);
-	return (1);
-}
+	char	*new;
+	size_t	i;
+	size_t	j;
+	size_t	count;
 
-int	ft_putstr(char *s)
-{
-	int	len;
-
-	len = 0;
-	if (!s)
+	count = 0;
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	new = malloc(sizeof(char) * (i + j + 1));
+	if (!new)
+		return (0);
+	while (s1[count] != '\0')
 	{
-		if (write(1, "(null)", 6) != 6)
-			return (-1);
-		return (6);
+		new[count] = s1[count];
+		count++;
 	}
-	while (s[len] != '\0')
+	count = 0;
+	while (s2[count] != '\0')
 	{
-		if (ft_putchar(s[len]) == -1)
-			return (-1);
-		len++;
+		new[count + i] = s2[count];
+		count++;
 	}
-	return (len);
+	new[count + i] = '\0';
+	return (new);
 }

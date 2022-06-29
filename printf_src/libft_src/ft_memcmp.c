@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c_s_p.c                                   :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albagarc <albagarc@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 13:23:32 by albagarc          #+#    #+#             */
-/*   Updated: 2022/06/29 09:10:02 by albagarc         ###   ########.fr       */
+/*   Created: 2022/05/20 18:23:08 by albagarc          #+#    #+#             */
+/*   Updated: 2022/05/20 19:16:13 by albagarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_character(int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (ft_putchar(n) == -1)
-		return (-1);
-	return (1);
-}
+	size_t				i;
+	const unsigned char	*s1a;
+	const unsigned char	*s2a;
 
-int	ft_print_string(char *str)
-{
-	return (ft_putstr(str));
+	s1a = (const unsigned char *) s1;
+	s2a = (const unsigned char *) s2;
+	i = 0;
+	while (i < n)
+	{
+		if (s1a[i] != s2a[i])
+			return (s1a[i] - s2a[i]);
+		i++;
+	}
+	return (0);
 }
