@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 INC_DIR = inc
 OBJ_DIR = obj/
 SRC_DIR = src/
-SRC_FILES	=	ft_printf ft_print_c_s_p ft_putfunction ft_putnbr_fd ft_hexa 
+SRC_FILES	=	ft_printf ft_print_char_string ft_putnbr ft_hexa_pointer 
 
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
