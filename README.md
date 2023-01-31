@@ -16,13 +16,13 @@ It will contain a lot of general-purpose functions my programs will rely upon.
 |ft_strncmp|ft_strnstr|ft_strrchr|ft_strtrim|ft_substr|ft_tolower|
 |ft_toupper| | | | | |
 
-|ft_atoi|ft_bzero|
-|---|---|
-|`W`, ⬆️|Arriba|
-|`A`, ⬅️|Izquierda|
-|`S`, ⬇️|Abajo|
-|`D`,  ➡️ |Derecha|
-|`ESC ❌`|Cierra la ventana|
+|ft_atoi|ft_bzero|---|
+|---|---|---|
+|`W`, ⬆️|Arriba|---|
+|`A`, ⬅️|Izquierda|---|
+|`S`, ⬇️|Abajo|---|
+|`D`,  ➡️ |Derecha|---|
+|`ESC ❌`|Cierra la ventana|---|
 
 ### Personal learning
 * Understanding the manual of the functions in order to replicate them.
