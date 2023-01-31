@@ -17,6 +17,7 @@ It will contain a lot of general-purpose functions my programs will rely upon.
 |ft_toupper| | | | | |
 
 |ft_atoi|ft_bzero|ft_calloc|ft_isalnum|ft_isalpha|ft_isascii|
+|ft_atoi|ft_bzero|ft_calloc|ft_isalnum|ft_isalpha|ft_isascii|
 |---|---|---|---|---|---|
 |`W`, ⬆️|Arriba|---|---|---|---|
 |`A`, ⬅️|Izquierda|---|---|---|---|
