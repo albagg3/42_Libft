@@ -24,6 +24,7 @@ It will contain a lot of general-purpose functions my programs will rely upon.
 |`S`, ⬇️|Abajo|---|---|---|---|
 |`D`,  ➡️ |Derecha|---|---|---|---|
 |`ESC ❌`|Cierra la ventana|---|---|---|---|
+|`ESC ❌`|Cierra la ventana|---|---|---|---|
 
 ### Personal learning
 * Understanding the manual of the functions in order to replicate them.
