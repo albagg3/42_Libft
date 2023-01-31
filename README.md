@@ -8,8 +8,6 @@ It will contain a lot of general-purpose functions my programs will rely upon.
 |ft_atoi|ft_bzero|
 |ft_calloc|ft_isalnum|
 |ft_isalpha|ft_isascii|
-
-
 |ft_isdigit|ft_isprint|ft_itoa|ft_lstadd_back|ft_lstadd_front|ft_lstclear|
 |ft_lstdelone|ft_lstiter|ft_lstlast|ft_lstmap|ft_lstnew|ft_lstsize|
 |ft_memchr|ft_memcmp|ft_memcpy|ft_memmove|ft_memset|ft_putchar_fd|
